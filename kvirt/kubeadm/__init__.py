@@ -96,7 +96,7 @@ def create(config, plandir, cluster, overrides):
     if data.get('virtual_router_id') is None:
         data['virtual_router_id'] = word2number(data['cluster'])
     pprint("Using keepalived virtual_router_id %s" % data['virtual_router_id'], color='blue')
-    version = data.get('version')
+    version = str(data.get('version'))
     if version is not None and not version.startswith('1.'):
         pprint("Invalid version %s" % version, color='red')
         os._exit(1)
